@@ -1,0 +1,31 @@
+@model CreateModel
+
+<div class="text-center">
+	<h4>Create User</h4>
+</div>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Create" method="post">
+	<div class="form-group">
+		<label asp-for="Name">Name</label>
+		<input asp-for="Name" class="form-control" />
+	</div>
+	<div class="form-group">
+		<label asp-for="Email">Email</label>
+		<input asp-for="Email" class="form-control" />
+	</div>
+	<div class="form-group">
+		<label for="password" >Password</label>
+		<input id="password" name="Password" class="form-control" />
+	</div>
+	<div class="form-group">
+		<input type="radio" name="role" value="@Roles.Admin">
+		<label>Admin</label>
+		<input type="radio" name="role" value="@Roles.User">
+		<label>User</label>
+	</div>
+	<br>
+	<button type="submit" class="btn btn-primary">Create</button>
+	<a asp-action="Index" class="btn btn-default">Cancel</a>
+</form>

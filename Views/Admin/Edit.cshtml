@@ -1,0 +1,29 @@
+@model AppUser 
+
+<div class="text-center">
+	<h4>Edit User</h4>
+</div>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Edit" method="post">
+	<div class="form-group">
+		<label asp-for="Id">Id</label>
+		<input asp-for="Id" class="form-control" disabled/>
+	</div>
+	<div class="form-group">
+		<label asp-for="UserName">Name</label>
+		<input asp-for="UserName" class="form-control" />
+	</div>
+	<div class="form-group">
+		<label asp-for="Email">Email</label>
+		<input asp-for="Email" class="form-control" />
+	</div>
+	<div class="form-group">
+		<label for="Password">Password</label>
+		<input name="Password" class="form-control" />
+	</div>
+	<br>
+	<button type="submit" class="btn btn-primary">Edit</button>
+	<a asp-action="Index" class="btn btn-default">Back</a>
+</form>
